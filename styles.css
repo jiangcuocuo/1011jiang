@@ -1,0 +1,316 @@
+/* 基础样式 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #d9edeb;
+    padding: 20px;
+}
+
+/* 手机外壳样式 */
+.phone-case {
+    display: inline-block;
+    padding: 8px 5px 0.1px;
+    background: linear-gradient(145deg, #090B0C 0%, #090B0C 50%, #090B0C 100%);
+    border-radius: 35px;
+    box-shadow: 
+        0 8px 20px rgba(0,0,0,0.4),
+        inset 0 -4px 12px rgba(255,255,255,0.05),
+        inset 0 4px 12px rgba(255,255,255,0.03);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 手机屏幕样式 */
+.phone-screen {
+    display: inline-block;
+    padding: 0px 5px 0.001px; 
+    background: linear-gradient(145deg, #f6f1e7 0%, #d9edeb 60%, #f6f1e7 100%);
+    border-radius: 30px;
+    box-shadow: 
+        inset 0 -3px 10px rgba(255,255,255,0.05),
+        inset 0 3px 10px rgba(255,255,255,0.03);
+    position: relative;
+    overflow: hidden;
+    width: 320px;
+    height: 600px;
+}
+
+/* 摄像头 */
+.camera-notch {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(155deg, #302F2B 100%,#302F2B 0%);
+    border-radius: 0 0 14px 14px;
+    z-index: 1;
+}
+
+.camera-lens {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 18px;
+    height: 18px;
+    background: #090B0C;
+    border-radius: 50%;
+    box-shadow: 
+        inset 0 0 4px #a0bcb8,
+        0 0 6px rgba(160,188,184,0.3);
+}
+
+/* 状态栏 */
+.status-bar {
+    background: linear-gradient(to right, #1B1B1F, #68686E);
+    padding: 8px 18px 6px;
+    height: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-radius: 18px 18px 0 0;
+    box-sizing: border-box;
+    color: #DBD9CF;
+    font-size: 12px;
+}
+
+/* 宠物容器 */
+.pet-container {
+    padding: 20px;
+    height: calc(100% - 24px);
+    display: flex;
+    flex-direction: column;
+}
+
+.pet-display {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+    background-color: #e5c8c0;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* 像素猫样式 */
+.pixel-cat {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.cat-head {
+    width: 100px;
+    height: 100px;
+    background: #d2d1c5;
+    border-radius: 50%;
+    position: relative;
+}
+
+.cat-ear-left, .cat-ear-right {
+    width: 30px;
+    height: 40px;
+    background: #d2d1c5;
+    position: absolute;
+    top: -15px;
+}
+
+.cat-ear-left {
+    left: 10px;
+    transform: rotate(-30deg);
+    border-radius: 50% 50% 0 0;
+}
+
+.cat-ear-right {
+    right: 10px;
+    transform: rotate(30deg);
+    border-radius: 50% 50% 0 0;
+}
+
+.cat-eye-left, .cat-eye-right {
+    width: 20px;
+    height: 25px;
+    background: #2d3436;
+    border-radius: 50%;
+    position: absolute;
+    top: 35px;
+}
+
+.cat-eye-left {
+    left: 25px;
+}
+
+.cat-eye-right {
+    right: 25px;
+}
+
+.cat-nose {
+    width: 15px;
+    height: 10px;
+    background: #ff6b6b;
+    border-radius: 50%;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cat-mouth {
+    width: 30px;
+    height: 15px;
+    border-bottom: 3px solid #2d3436;
+    border-radius: 0 0 20px 20px;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 状态条 */
+.stats-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.stat {
+    background: rgba(160,188,184,0.2);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.stat-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 12px;
+    color: #2d3436;
+}
+
+.stat-bar {
+    height: 12px;
+    background: #f6f1e7;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.stat-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+
+.hunger .stat-fill { background: linear-gradient(90deg, #e5c8c0, #d2a89e); }
+.happiness .stat-fill { background: linear-gradient(90deg, #a0bcb8, #7da8a4); }
+.energy .stat-fill { background: linear-gradient(90deg, #d2d1c5, #b8b7ac); }
+
+/* 操作按钮 */
+.actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.action-btn {
+    padding: 12px 8px;
+    border: none;
+    border-radius: 12px;
+    background: #a0bcb8;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.action-btn i {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.feed-btn { background: #e5c8c0; }
+.play-btn { background: #a0bcb8; }
+.sleep-btn { background: #d2d1c5; color: #2d3436; }
+
+/* 消息框 */
+.message-box {
+    background: rgba(255,255,255,0.7);
+    border: 1px dashed #a0bcb8;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    text-align: center;
+    margin-top: auto;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Home指示条 */
+.home-indicator {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: rgba(120,120,120,0.6);
+    border-radius: 2px;
+}
+
+/* 动画 */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes eat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes sleep {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(2deg); }
+    75% { transform: rotate(-2deg); }
+}
+
+.bounce {
+    animation: bounce 0.5s ease infinite;
+}
+
+.eat {
+    animation: eat 0.3s ease;
+}
+
+.sleep {
+    animation: sleep 2s ease infinite;
+}

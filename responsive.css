@@ -1,0 +1,11 @@
+@media (max-width: 400px) {
+    .phone-case {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-height: 700px) {
+    .phone-case {
+        transform: scale(0.8);
+    }
+}
