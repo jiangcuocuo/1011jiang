@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>像素小黑猫</title>
+    <style>
+        @font-face {
+            font-family: 'PixelFont';
+            src: url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f6f1e7;
+            font-family: 'Press Start 2P', cursive;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        /* 手机外壳容器 */
+        .phone-container {
+            width: 100%;
+            max-width: 400px;
+            height: 100vh;
+            background: linear-gradient(145deg, #090B0C 0%, #090B0C 50%, #090B0C 100%);
+            border-radius: 40px;
+            padding: 15px 10px;
+            box-shadow: 
+                0 10px 30px rgba(0,0,0,0.4),
+                inset 0 -5px 15px rgba(255,255,255,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* 手机屏幕 */
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #f6f1e7 0%, #d9edeb 100%);
+            border-radius: 30px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        /* 摄像头区域 */
+        .camera-notch {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(155deg, #302F2B 100%,#302F2B 0%);
+            border-radius: 0 0 15px 15px;
+            z-index: 10;
+        }
+        
+        .camera-lens {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: #090B0C;
+            border-radius: 50%;
+            box-shadow: inset 0 0 5px #a0bcb8;
+        }
+        
+        /* 像素猫容器 */
+        .cat-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        /* 像素小黑猫 */
+        .pixel-cat {
+            width: 180px;
+            height: 180px;
+            position: relative;
+        }
+        
+        .cat-body {
+            width: 150px;
+            height: 150px;
+            background-color: #2d3436;
+            border-radius: 75px;
+            position: relative;
+        }
+        
+        .cat-face {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 100px;
+        }
+        
+        .cat-eye {
+            width: 20px;
+            height: 25px;
+            background-color: #f6f1e7;
+            border-radius: 50%;
+            position: absolute;
+            top: 30px;
+        }
+        
+        .cat-eye.left {
+            left: 25px;
+        }
+        
+        .cat-eye.right {
+            right: 25px;
+        }
+        
+        .cat-pupil {
+            width: 10px;
+            height: 15px;
+            background-color: #090B0C;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+        
+        .cat-nose {
+            width: 12px;
+            height: 8px;
+            background-color: #e5c8c0;
+            border-radius: 50%;
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .cat-mouth {
+            width: 30px;
+            height: 15px;
+            border-bottom: 3px solid #e5c8c0;
+            border-radius: 0 0 20px 20px;
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .cat-ear {
+            width: 40px;
+            height: 50px;
+            background-color: #2d3436;
+            position: absolute;
+            top: -20px;
+            border-radius: 50% 50% 0 0;
+        }
+        
+        .cat-ear.left {
+            left: 20px;
+            transform: rotate(-20deg);
+        }
+        
+        .cat-ear.right {
+            right: 20px;
+            transform: rotate(20deg);
+        }
+        
+   /* 控制按钮区域 */
+        .controls {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .control-btn {
+            height: 80px;
+            border-radius: 20px;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 
+                0 4px 8px rgba(0,0,0,0.2),
+                inset 0 -3px 6px rgba(255,255,255,0.3);
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .control-btn:active {
+            transform: translateY(3px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .control-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30%;
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .feed-btn {
+            background: linear-gradient(145deg, #f6f1e7, #e8e3d9);
+            color: #2d3436;
+        }
+        
+        .play-btn {
+            background: linear-gradient(145deg, #d9edeb, #c8ddd9);
+            color: #2d3436;
+        }
+        
+        .sleep-btn {
+            background: linear-gradient(145deg, #a0bcb8, #90aca8);
+            color: #2d3436;
+        }
+        
+        .btn-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        /* 状态栏 */
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: rgba(0,0,0,0.1);
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .time {
+            color: #2d3436;
+            font-size: 12px;
+        }
+        
+        .battery {
+            color: #2d3436;
+            font-size: 12px;
+        }
+        
+        /* 消息框 */
+        .message-box {
+            position: absolute;
+            bottom: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.8);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #2d3436;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            max-width: 80%;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .message-box.show {
+            opacity: 1;
+        }
+        
+        /* Home指示条 */
+        .home-indicator {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: rgba(45,52,54,0.5);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-container">
+        <div class="phone-screen">
+            <div class="camera-notch">
+                <div class="camera-lens"></div>
+            </div>
+            
+            <div class="status-bar">
+                <div class="time">14:30</div>
+                <div class="battery">▰▰▰▱ 82%</div>
+            </div>
+            
+            <div class="cat-container">
+                <div class="pixel-cat">
+                    <div class="cat-ear left"></div>
+                    <div class="cat-ear right"></div>
+                    <div class="cat-body">
+                        <div class="cat-face">
+                            <div class="cat-eye left">
+                                <div class="cat-pupil"></div>
+                            </div>
+                            <div class="cat-eye right">
+                                <div class="cat-pupil"></div>
+                            </div>
+                            <div class="cat-nose"></div>
+                            <div class="cat-mouth" id="cat-mouth"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="message-box" id="message-box">
+                喵~ 你好呀！
+            </div>
+            
+            <div class="controls">
+                <button class="control-btn feed-btn" id="feed-btn">
+                    <span class="btn-icon">🍣</span>
+                    <span>喂食</span>
+                </button>
+                <button class="control-btn play-btn" id="play-btn">
+                    <span class="btn-icon">🎾</span>
+                    <span>玩耍</span>
+                </button>
+                <button class="control-btn sleep-btn" id="sleep-btn">
+                    <span class="btn-icon">💤</span>
+                    <span>睡觉</span>
+                </button>
+            </div>
+            
+            <div class="home-indicator"></div>
+        </div>
+    </div>
+
+    <script>
+        // 简单的交互逻辑
+        const feedBtn = document.getElementById('feed-btn');
+        const playBtn = document.getElementById('play-btn');
+        const sleepBtn = document.getElementById('sleep-btn');
+        const messageBox = document.getElementById('message-box');
+        const catMouth = document.getElementById('cat-mouth');
+        
+        function showMessage(message) {
+            messageBox.textContent = message;
+            messageBox.classList.add('show');
+            setTimeout(() => {
+                messageBox.classList.remove('show');
+            }, 2000);
+        }
+        
+        feedBtn.addEventListener('click', () => {
+            showMessage('喵呜~ 好吃！');
+            catMouth.style.borderRadius = '50%';
+            catMouth.style.height = '20px';
+            setTimeout(() => {
+                catMouth.style.borderRadius = '0 0 20px 20px';
+                catMouth.style.height = '15px';
+            }, 1000);
+        });
+        
+        playBtn.addEventListener('click', () => {
+            showMessage('喵喵！真好玩！');
+            const cat = document.querySelector('.pixel-cat');
+            cat.style.animation = 'bounce 0.5s ease';
+            setTimeout(() => {
+                cat.style.animation = '';
+            }, 500);
+        });
+        
+        sleepBtn.addEventListener('click', function() {
+            const cat = document.querySelector('.cat-body');
+            if (cat.style.backgroundColor === '#2d3436') {
+                cat.style.backgroundColor = '#1a1e20';
+                showMessage('Zzz... 睡着了');
+                this.innerHTML = '<span class="btn-icon">☀️</span><span>唤醒</span>';
+            } else {
+                cat.style.backgroundColor = '#2d3436';
+                showMessage('喵~ 睡醒啦！');
+                this.innerHTML = '<span class="btn-icon">💤</span><span>睡觉</span>';
+            }
+        });
+        
+        // 初始显示欢迎消息
+        setTimeout(() => {
+            showMessage('欢迎照顾像素小黑猫！');
+        }, 1000);
+    </script>
+</body>
+</html>
