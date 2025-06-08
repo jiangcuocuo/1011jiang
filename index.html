@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>像素小猫宠物</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="pet-container">
+        <div class="pet-display" id="pet-display">
+            <!-- 像素猫将通过JS渲染 -->
+            <div class="pixel-cat">
+                <div class="cat-body"></div>
+                <div class="cat-face">
+                    <div class="cat-eye left"></div>
+                    <div class="cat-eye right"></div>
+                    <div class="cat-nose"></div>
+                    <div class="cat-mouth" id="cat-mouth"></div>
+                    <div class="cat-whiskers left"></div>
+                    <div class="cat-whiskers right"></div>
+                </div>
+                <div class="cat-ear left"></div>
+                <div class="cat-ear right"></div>
+            </div>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stat hunger">
+                <div class="stat-name">饥饿度</div>
+                <div class="stat-bar">
+                    <div class="stat-fill" id="hunger-bar"></div>
+                </div>
+                <div class="stat-value" id="hunger-value">80%</div>
+            </div>
+            
+            <div class="stat happiness">
+                <div class="stat-name">快乐度</div>
+                <div class="stat-bar">
+                    <div class="stat-fill" id="happiness-bar"></div>
+                </div>
+                <div class="stat-value" id="happiness-value">75%</div>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <button class="action-btn feed" id="feed-btn">
+                <span class="btn-icon">🍗</span>
+                <span class="btn-text">喂食</span>
+            </button>
+            <button class="action-btn play" id="play-btn">
+                <span class="btn-icon">🎾</span>
+                <span class="btn-text">玩耍</span>
+            </button>
+            <button class="action-btn clean" id="clean-btn">
+                <span class="btn-icon">🛁</span>
+                <span class="btn-text">清洁</span>
+            </button>
+            <button class="action-btn sleep" id="sleep-btn">
+                <span class="btn-icon">💤</span>
+                <span class="btn-text">睡觉</span>
+            </button>
+        </div>
+        
+        <div class="message-box" id="message-box">
+            欢迎照顾像素小猫！点击按钮与它互动吧~
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
