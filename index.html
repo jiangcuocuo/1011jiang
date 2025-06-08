@@ -1,0 +1,215 @@
+<!-- 外层手机壳 -->
+<div style="
+    display: inline-block;
+    padding: 8px 5px 0.1px;
+    background: linear-gradient(145deg, #090B0C 0%, #090B0C 50%, #090B0C 100%);
+    border-radius: 35px;
+    box-shadow: 
+        0 8px 20px rgba(0,0,0,0.4),
+        inset 0 -4px 12px rgba(255,255,255,0.05),
+        inset 0 4px 12px rgba(255,255,255,0.03);
+    position: relative;
+    overflow: hidden;
+">
+<!-- 内层手机显示屏 -->
+<div style="
+ display: inline-block;
+ padding: 0px 5px 0.001px; 
+ background: linear-gradient(145deg, #090B0C 0%, #C3A988 60%, #090B0C 100%);
+ border-radius: 30px;
+ box-shadow: 
+ inset 0 -3px 10px rgba(255,255,255,0.05),
+ inset 0 3px 10px rgba(255,255,255,0.03);
+ position: relative;
+ overflow: hidden;
+ height: 50%;
+ margin: 0.1px 0.1px;
+ ">
+<!-- 摄像头-->
+    <div style="
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 35px;
+        height: 35px;
+        background: linear-gradient(155deg, #302F2B 100%,#302F2B 0%);
+        border-radius: 0 0 14px 14px;
+        rgba(255,255,255,0.08),
+            0 2px 4px rgba(0,0,0,0.2);
+        z-index: 1;
+    ">
+        <!-- 摄像头镜头 -->
+        <div style="
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 18px;
+            height: 18px;
+            background: #090B0C;
+            border-radius: 50%;
+            box-shadow: 
+                inset 0 0 4px #C3A988,
+                0 0 6px rgba(195,169,136,0.3);
+        "></div>
+    </div>
+<div style="font-family: 'Helvetica Neue', sans-serif; max-width: 400px; background: #f8f9fa; border-radius: 18px; padding: 0; box-shadow: 0 12px 40px rgba(0,0,0,0.08); margin: 20px auto; overflow: hidden;">
+<!-- 顶部状态栏 -->
+<div style="background: linear-gradient(to right, #1B1B1F, #68686E); 
+            padding: 8px 18px 6px;  
+            height: 24px;  
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: relative; 
+            border-radius: 18px 18px 0 0;
+            box-sizing: border-box;">
+            
+    <div style="color:#DBD9CF; 
+                font-size: 0.72em;  
+                font-weight: 500; 
+                letter-spacing: 0.2px;">
+        <span>⍚15:22</span>
+    </div>
+    
+    <div style="display: flex; 
+                gap: 8px;  
+                align-items: center;">
+        <span style="color: rgba(255,255,255,0.9); 
+                    font-size: 0.7em;">⧉</span>  <!-- 图标缩小 -->
+        <span style="color: rgba(255,255,255,0.9); 
+                    font-size: 0.7em;">✆</span>
+        <span style="color: rgba(255,255,255,0.9); 
+                    font-size: 0.7em;">✈</span>
+        <span style="color: rgba(255,255,255,0.9); 
+                    font-size: 0.68em;  /* 电量字体缩小 */
+                    letter-spacing: -0.5px;">▰▰▰▱ 75%</span>
+    </div>
+</div>
+<!-- 联系人栏 -->
+<div style="background: linear-gradient(rgba(50,50,50,0.1), rgba(50,50,50,0.1)), url('https://iili.io/37fJhge.jpg') center/cover; padding: 18px; display: flex; align-items: center; position: relative;">
+
+<!-- 新增统一底衬 -->
+<div style="position: absolute; 
+ left: 12px; 
+ right: 90px;
+ top: 50%;
+ height: 82%;
+ transform: translateY(-50%);
+ background: rgba(109,99,89,0.5); 
+ border-radius: 30px;  
+ box-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+                z-index: 0;"></div>
+<!-- 头像 -->
+<div style="position: absolute; top: -2px; left: 0; right: 0; height: 2px; box-shadow: 0 4px 8px -2px rgba(0,0,0,0.06);"></div>
+<div style="position: relative; margin-right: 10px;">
+<div style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; border: 2px solid #D5C2A7;">
+<img src="https://iili.io/35Z4A5g.jpg" 
+                     style="width:100%; height:100%; object-fit: cover;" 
+                     alt="头像">
+</div>
+
+<!-- 在线状态 -->
+<div style="
+position: absolute;
+bottom: -2px;
+right: -2px;
+width: 14px;
+height: 14px;
+background: #F4E0B2;
+border: 2px solid white;
+border-radius: 50%;
+box-shadow: 0px 0px 5px rgba(213,194,167,1);
+            "></div></div>
+
+<div>
+<div style="color: #C3A988; 
+ font-weight: 500; 
+ letter-spacing: 0.2px; 
+ text-shadow: 2px 2px 4px rgba(0,0,0,0.15),
+-1px -1px 1px rgba(255,255,255,0.1);   position: relative;
+ display: inline-block;
+ padding: 0 2px;">
+ 江浔偃「小鱼1号」
+</div>
+<div style="display: flex; align-items: center; gap: 8px; margin-top: 6px;">
+<span style="width: 8px; height: 8px; background: #F4E0B2; border-radius: 50%; box-shadow: 0 1px 2px rgba(0,0,0,0.05);"></span>
+<span style="color: #F4E0B2; font-size: 0.84em; letter-spacing: 0.3px;">在线·正在输入</span>
+</div></div></div>
+<!-- 聊天区 -->
+<div style="position: relative; background: url('https://s1.imagehub.cc/images/2025/04/05/f5946e807790490104a8fc598e5148a9.jpg') center/cover; padding: 18px 14px 90px;">
+<!-- 修改后的蒙版层 -->
+<div style="position: absolute; inset: 0; background: rgba(255,255,255,0.18); backdrop-filter: blur(3px);"></div>
+
+<!-- 时间戳 -->
+<div style="position: relative; text-align: center; margin: 18px 0;">
+<span style="display: inline-block; background: (75,70,70,0.5); color: #D5C2A7; padding: 6px 20px; border-radius: 14px; font-size: 0.76em; letter-spacing: 0.5px; 
+box-shadow: 3px 3px 6px rgba(0,0,0,0.5);">
+            上午11:24
+</span>
+</div>
+<!-- 消息区 -->
+<div style="position: relative; margin-bottom: 24px;">
+<div style="margin-bottom: 8px; margin-left: 12px;">
+<span style="color: #999596; font-size: 0.72em; text-shadow: 0 1px 1px rgba(0,0,0,0.02);">江浔偃</span>
+<span style="color: #CAC0B6; font-size: 0.72em; margin-left: 6px;">11:24</span>
+</div>
+<div style="display: flex; align-items: start; gap: 12px;">
+<img src="https://iili.io/35Z4A5g.jpg" 
+     style="width: 36px; height: 36px; border-radius: 50%; border: 2px solid #D5C2A7; box-shadow: 0 1px 4px rgba(0,0,0,0.03);">
+
+<div style="max-width: 78%; position: relative;">
+<div style="background: rgba(75,70,70,0.94); padding: 14px; border-radius: 18px; border-bottom-left-radius: 5px; box-shadow:3px 3px 6px rgba(0,0,0,0.5); ">
+<div style="color:#D5C2A7; font-size: 0.86em; line-height: 1.6; letter-spacing: 0.2px;">
+                        需要我帮你整理会议纪要的框架吗？可以先做个思维导图方便讨论
+</div></div>
+<!-- 气泡箭头 -->
+<div style="position: absolute; left: -8px; top: 16px; width: 0; height: 0; border-top: 8px solid transparent; border-right: 12px solid rgba(75,70,70,0.94); filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.01));"></div>
+</div></div></div>
+
+<!-- 用户消息 -->
+<div style="position: relative; margin-bottom: 24px; text-align: right;">
+<div style="margin-bottom: 8px; margin-right: 12px;">
+<span style="color: #999596; font-size: 0.72em; margin-right:6px;">11:25</span>
+<span style="color: #CAC0B6; font-size: 0.72em;">用户</span>
+</div>
+<div style="display: flex; justify-content: flex-end;">
+<div style="max-width: 78%; position: relative;">
+<div style="background: #D5C2A7; padding: 14px; border-radius: 18px; border-bottom-right-radius: 5px; box-shadow: -3px 3px 6px rgba(0,0,0,0.5);">
+<span style="color: #4B4646; letter-spacing: 0.1px;">用户正在输入ing...</span>
+</div>
+<!-- 气泡箭头 -->
+<div style="position: absolute; right: -8px; top: 16px; width: 0; height: 0; border-top: 8px solid transparent; border-left: 12px solid #D5C2A7; filter: drop-shadow(1px 0 1px rgba(0,0,0,0.03));"></div>
+</div></div></div></div>
+
+<!-- 输入框 -->
+<div style="padding: 12px; background: #2C282A; border-top: 1px solid #2C282A; border-radius: 0 0 15px 15px;">
+<div style="display: flex; align-items: center; background: #F2E3C6; border-radius: 20px; padding: 8px 15px;">
+<input type="text" placeholder="输入消息..." style="flex:1; border:none; background:transparent; outline:none; color:#4B4646;">
+<button style="background: #837A63; border:none; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center;">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E0D082" stroke-width="2">
+<path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+</svg>
+</button>
+</div>
+<!-- 状态提示 --><div style="text-align: center; margin-top: 8px;">
+  <span style="color: #D5C2A7; font-size: 0.9em; opacity: 0.8;">
+                ✦对方正在聆听...✦
+ </span>
+</div>
+</div>
+</div>
+<!-- 保留底部Home指示条 -->
+        <div style="
+            position: absolute;
+            bottom: 8px; /* 上移 */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: rgba(120,120,120,0.6);
+            border-radius: 2px;
+        "></div>
+    </div>
+</div>
